@@ -10,20 +10,12 @@
 //document.querySelector('#fourth').addEventListener('click', updateBgColor);
 
 function updateBgColor(event) {
-    let pikachu = document.querySelector('img');
-    let clickedElement = event.target;
-    let color = clickedElement.dataset.color;
-
-    if (!color) {
-        color = window.getComputedStyle(clickedElement).backgroundColor;
-    }
-
-    if (color) {
-        pikachu.style.backgroundColor = color;
-    }
+    let pikachu = document.getElementById('pikachu');
+    let color = event.target.dataset.color;
+    pikachu.style.backgroundColor = color;
 
 }
-let colorBoxes = document.getElementById('colors')
+let colorBoxes = document.querySelector('.container')
 
 colorBoxes.addEventListener("click", function (event) {
   updateBgColor(event)
